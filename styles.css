@@ -1,0 +1,123 @@
+/* ===== Color palette (dark-mode first) ===== */
+:root {
+    --clr-bg: #121212;          /* base surface */
+    --clr-surface: #181818;     /* cards / footer */
+    --clr-text: #f5f5f5;        /* off-white for better contrast */
+    --clr-accent: #b1070f;      /* Netflix Red */
+    --clr-accent-dark: #87050b; /* darker hover */
+  }
+  
+  /* ===== Reset ===== */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  
+  /* ===== Navbar ===== */
+  .navbar {
+    position: absolute;     /* floats over hero */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 10;
+  }
+  .logo {
+    height: 70px;           /* adjust as needed */
+    width: auto;
+  }
+  .cta {
+    background: var(--clr-accent);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(210, 8, 18, 0.4);
+    transition: all 0.25s ease;
+    transform: translateY(0);
+    position: relative;
+    z-index: 100;
+  }
+  
+  .cta:hover,
+  .cta:focus {
+    background: var(--clr-accent-dark);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 24px rgba(229, 9, 20, 0.5);
+  }
+  
+  /* ===== Hero ===== */
+  .hero {
+    height: 70vh;           /* big banner */
+    min-height: 480px;
+    overflow: hidden;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .about {
+    background: var(--clr-bg);
+    padding: 6rem 1rem; /* more vertical space */
+    text-align: center;
+  }
+  
+  .about .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--clr-text); /* Optional: make heading pop with red */
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+  
+  .about p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--clr-text);
+  }
+  
+  /* Booking area */
+  .booking-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* padding: 4rem 1rem; */
+  }
+  #tidycal-embed {
+    min-width: min(100%, 600px);
+  }
+  
+  /* ===== Footer ===== */
+  footer {
+    background: var(--clr-bg);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  /* ===== Responsive tweaks ===== */
+  @media (max-width: 600px) {
+    .cta {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+    }
+  }
+  
