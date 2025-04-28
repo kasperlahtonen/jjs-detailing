@@ -113,11 +113,64 @@
     font-size: 0.875rem;
   }
   
-  /* ===== Responsive tweaks ===== */
-  @media (max-width: 600px) {
-    .cta {
-      padding: 0.6rem 1.2rem;
-      font-size: 0.9rem;
-    }
+/* -- Yleiset pienennykset (≤ 768 px) -- */
+@media (max-width: 768px) {
+  /* Hero-banneri ei vie koko ruutua matalissa puhelimissa */
+  .hero { height: 50vh; }
+  .about,
+  .booking-wrapper { padding: 4rem 1rem; }
+
+  .hero img {
+    content: url('assets/JJs-detailing-banner2.png');
+    height: auto; /* Allow natural height for better scaling */
   }
+
+}
+
+/* -- Pienet puhelimet (≤ 480 px) -- */
+@media (max-width: 480px) {
+  /* Logo ja painike pinoutuvat pystysuoraan */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;   /* vasemmalle jotta painike näkyy heti */
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .logo  { height: 56px; }
+
+  /* “Varaa Aika” vie koko rivin ja on helppo napata peukalolla */
+  .cta {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  /* Hero-banneri vielä kompaktimpi, jotta sisältö näkyy nopeammin */
+  .hero { height: 50vh; }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Tekstien typografia pienempi mutta luettava */
+  .about h2 { font-size: 1.45rem; }
+  .about p  { font-size: 1rem; }
+
+  /* TidyCal-upotin pakotetaan täysleveäksi */
+  .booking-wrapper {
+    padding: 3rem 0.5rem;
+  }
+  #tidycal-embed,
+  .tidycal-embed { min-width: 100% !important; }
+}
+
+/* -- Erittäin isot näytöt (≥ 1600 px) – valinnainen, mutta mukava PC:llä -- */
+@media (min-width: 1600px) {
+  .about .container { max-width: 900px; }
+}
   
